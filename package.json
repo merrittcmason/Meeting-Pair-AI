@@ -1,0 +1,67 @@
+{
+  "name": "meeting-pair-ai",
+  "version": "1.0.0",
+  "description": "macOS desktop meeting assistant with AI-powered transcription and note-taking",
+  "main": "src/main/main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:main\" \"npm run dev:renderer\"",
+    "dev:main": "electron src/main/main.js",
+    "dev:renderer": "vite",
+    "build": "npm run build:renderer && npm run build:main",
+    "build:renderer": "vite build",
+    "build:main": "electron-builder",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.meetingpair.ai",
+    "productName": "Meeting Pair AI",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/main/**/*",
+      "dist-renderer/**/*",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    }
+  },
+  "keywords": [
+    "meeting",
+    "transcription",
+    "ai",
+    "notes",
+    "obsidian"
+  ],
+  "author": "Meeting Pair AI",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "concurrently": "^8.2.2",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.0",
+    "axios": "^1.6.2",
+    "crypto-js": "^4.2.0",
+    "electron-store": "^8.1.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.0",
+    "markdown-it": "^14.0.0",
+    "node-record-lpcm16": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "socket.io-client": "^4.7.4",
+    "ws": "^8.14.2"
+  }
+}
