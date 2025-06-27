@@ -1,4 +1,4 @@
-# Meeting Pair AI
+# Meeting Pair AI (OpensSource Template)
 
 **Meeting Pair AI** Meeting Pair AI is a closed-source AI assistant I built to help users take better notes during meetings. It uses OpenAI’s Whisper to transcribe system audio in real time, then feeds that into local large language models through Ollama for processing. The tool creates clean, well-written meeting notes and pushes them into the app of your choice. It’s built to run locally for speed and privacy, and it combines audio transcription, text generation, and automation to make meetings easier to follow and keep track of.
 
